@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart'; // funções do Firebase
+import 'firebase_options.dart'; // configurações do Firebase - criado no "$ flutterfire configure"
 import 'package:go_router/go_router.dart';
 import 'screens/tela_login.dart';
 import 'screens/tela_home.dart';
 import 'screens/tela_create_deck.dart';
 import 'screens/tela_settings.dart';
+import 'screens/tela_register.dart';
 
-void main() {
+void main() async {
+  // Inicializa o Flutter e o Firebase
+  // Garante que o Firebase seja inicializado antes de usar qualquer funcionalidade dele
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -30,6 +39,10 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/settings',
       builder: (context, state) => const SettingsPage(),
+    ),
+    GoRoute(
+      path: '/cadastro',
+      builder: (context, state) => const TelaCadastro(),
     ),
   ],
 );
