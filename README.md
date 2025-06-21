@@ -7,7 +7,7 @@
 No terminal, execute o seguinte comando para clonar o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/app-flashcard.git
+git clone https://github.com/Brunno-Bocardo/app-flashcard.git
 ```
 
 ### 2. Navegar para o Diretório do Projeto
